@@ -84,22 +84,24 @@ const hideModal = () => {
   modal.classList.remove('show');
 };
 // eslint-disable-next-line
-window.unlayer.registerTab({
+unlayer.registerTab({
   name: 'my_tab',
   label: 'My Tab',
   icon: 'fa-smile',
   supportedDisplayModes: ['web', 'email'],
   renderer: {
     // eslint-disable-next-line
-    Panel: window.unlayer.createPanel({
+    Panel: unlayer.createPanel({
       render() {
         return "<div>I am a custom tab.</div>"
       }
     }),
   }
 });
+ console.log('first')
 // eslint-disable-next-line
-window.unlayer.registerTool({
+unlayer.registerTool({
+  productId: 1,
   name: 'product_tool',
   label: 'Product',
   icon: 'fa-tag',
@@ -175,7 +177,7 @@ window.unlayer.registerTool({
   values: {},
   renderer: {
     // eslint-disable-next-line
-    Viewer: window.unlayer.createViewer({
+    Viewer: unlayer.createViewer({
       render(values) {
         return toolTemplate(values, true);
       },
@@ -262,11 +264,11 @@ window.unlayer.registerTool({
   },
 });
 // eslint-disable-next-line
-window.unlayer.registerPropertyEditor({
+unlayer.registerPropertyEditor({
   name: 'product_library',
   layout: 'bottom',
   // eslint-disable-next-line
-  Widget: window.unlayer.createWidget({
+  Widget: unlayer.createWidget({
     render(value, updateValue, data) {
       return editorTemplate;
     },
@@ -309,7 +311,7 @@ window.unlayer.registerPropertyEditor({
 });
 
 // eslint-disable-next-line
-window.unlayer.registerPropertyEditor({
+unlayer.registerPropertyEditor({
   name: 'product_properties',
   layout: 'bottom',
   // eslint-disable-next-line

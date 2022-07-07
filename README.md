@@ -1,70 +1,191 @@
-# Getting Started with Create React App
+##### 引入方式
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```
+npm install react-email-editor
+```
 
-## Available Scripts
+https://codesandbox.io/s/practical-mclean-infryz
 
-In the project directory, you can run:
+##### 数据格式
 
-### `npm start`
+```json
+{
+  "counters": {
+    "u_row": 13,
+    "u_column": 16,
+    "u_content_menu": 3,
+    "u_content_text": 11,
+    "u_content_image": 3,
+    "u_content_button": 4,
+    "u_content_social": 1,
+    "u_content_divider": 6
+  },
+  "body": {
+    "id": "33FuZvUBG1",
+    "rows": [
+      {
+        "id": "JVZ-uGz5jQ",
+        "cells": [1],
+        "columns": [
+          {
+            "id": "xRLJTwgdpD",
+            "contents": [
+              {
+                "id": "7AqmMduqrs",
+                "type": "divider",
+                "values": {
+                  "width": "100%",
+                  "border": {
+                    "borderTopWidth": "0px",
+                    "borderTopStyle": "solid",
+                    "borderTopColor": "#BBBBBB"
+                  },
+                  "textAlign": "center",
+                  "containerPadding": "5px",
+                  "anchor": "",
+                  "hideDesktop": false,
+                  "displayCondition": null,
+                  "_meta": {
+                    "htmlID": "u_content_divider_6",
+                    "htmlClassNames": "u_content_divider"
+                  },
+                  "selectable": true,
+                  "draggable": true,
+                  "duplicatable": true,
+                  "deletable": true,
+                  "hideable": true,
+                  "hideMobile": false
+                }
+              }
+            ],
+            "values": {
+              "_meta": {
+                "htmlID": "u_column_16",
+                "htmlClassNames": "u_column"
+              },
+              "border": {},
+              "padding": "0px",
+              "backgroundColor": ""
+            }
+          }
+        ],
+        "values": {
+          "displayCondition": null,
+          "columns": false,
+          "backgroundColor": "",
+          "columnsBackgroundColor": "",
+          "backgroundImage": {
+            "url": "",
+            "fullWidth": true,
+            "repeat": false,
+            "center": true,
+            "cover": false
+          },
+          "padding": "0px",
+          "anchor": "",
+          "hideDesktop": false,
+          "_meta": {
+            "htmlID": "u_row_13",
+            "htmlClassNames": "u_row"
+          },
+          "selectable": true,
+          "draggable": true,
+          "duplicatable": true,
+          "deletable": true,
+          "hideable": true,
+          "hideMobile": false,
+          "noStackMobile": false
+        }
+      }
+    ],
+    "values": {
+      "popupPosition": "center",
+      "popupWidth": "600px",
+      "popupHeight": "auto",
+      "borderRadius": "10px",
+      "contentAlign": "center",
+      "contentVerticalAlign": "center",
+      "contentWidth": "600px",
+      "fontFamily": {
+        "label": "Montserrat",
+        "value": "'Montserrat',sans-serif",
+        "url": "https://fonts.googleapis.com/css?family=Montserrat:400,700",
+        "defaultFont": true
+      },
+      "textColor": "#000000",
+      "popupBackgroundColor": "#FFFFFF",
+      "popupBackgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": false,
+        "center": true,
+        "cover": true
+      },
+      "popupOverlay_backgroundColor": "rgba(0, 0, 0, 0.1)",
+      "popupCloseButton_position": "top-right",
+      "popupCloseButton_backgroundColor": "#DDDDDD",
+      "popupCloseButton_iconColor": "#000000",
+      "popupCloseButton_borderRadius": "0px",
+      "popupCloseButton_margin": "0px",
+      "popupCloseButton_action": {
+        "name": "close_popup",
+        "attrs": {
+          "onClick": "document.querySelector('.u-popup-container').style.display = 'none';"
+        }
+      },
+      "backgroundColor": "#e8d4bb",
+      "backgroundImage": {
+        "url": "",
+        "fullWidth": true,
+        "repeat": false,
+        "center": true,
+        "cover": false
+      },
+      "preheaderText": "",
+      "linkStyle": {
+        "body": true,
+        "linkColor": "#0000ee",
+        "linkHoverColor": "#0000ee",
+        "linkUnderline": true,
+        "linkHoverUnderline": true
+      },
+      "_meta": {
+        "htmlID": "u_body",
+        "htmlClassNames": "u_body"
+      }
+    }
+  },
+  "schemaVersion": 8
+}
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+和之前变动较大
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### 高级组件
 
-### `npm test`
+social、video 等属于高级组件，需要付费才可使用
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+不同版本自定义组件限制不同
 
-### `npm run build`
+不知道算不算自定义组件？
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### 组件注册
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. 通过[编辑器注册](https://dashboard.unlayer.com/projects/88604/design/tools)，没有对应文档
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. 通过代码编写方式，需要开启高级功能
 
-### `npm run eject`
+   https://github.com/unlayer/react-email-editor/issues/105
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+##### 难度
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. 纯[英文文档](https://docs.unlayer.com/docs)
+2. [免费版本限制](https://dashboard.unlayer.com/projects/88604/settings/billing)，很多 API 和自定义东西都没法使用，没有试用版
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##### 预计时间
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. 购买日期开始，目前不知道什么时候能购买
+2. 基础使用，引入项目+初始化操作 2-3 天
+3. 自定义组件使用 预计 4 天
+4. 修改 text 组件，添加属性和自定义字段等内容 预计 3 天
+5. 数据结构 与后端联调接口等 预计 3 天

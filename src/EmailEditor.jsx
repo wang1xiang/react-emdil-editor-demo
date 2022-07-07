@@ -1,9 +1,12 @@
 import { useEffect, useRef } from "react";
-// import EmailEditor from "react-email-editor";
-import EmailEditor from './script';
+import EmailEditor from "react-email-editor";
+// import EmailEditor from './script';
 import sample from "./sample.json";
 
 const Editor = () => {
+  // const status = useScript(
+  //   window.location.protocol + "//" + window.location.host + "/productExample.js"
+  // );
   const emailEditorRef = useRef(null);
 
   const saveDesign = () => {
@@ -97,12 +100,12 @@ const Editor = () => {
       <EmailEditor
         minHeight={1000}
         options={{
+          customCSS: ['https://examples.unlayer.com/examples/custom-css/custom.css', 'https://examples.unlayer.com/examples/product-library-tool/productTool.css'],
           customJS: [
-            // window.location.protocol + '//' + window.location.host + '/custom.js',
-            window.location.protocol +
-              "//" +
-              window.location.host +
-              "/productExample.js",
+            // 'https://examples.unlayer.com/examples/custom-js/custom.js',
+            'https://examples.unlayer.com/examples/simple-custom-tool/custom.js',
+            'https://examples.unlayer.com/examples/product-library-tool/productTool.js',
+            // window.location.protocol + "//" + window.location.host + "/productExample.js"
           ],
           features: {
             textEditor: {
@@ -135,8 +138,8 @@ const Editor = () => {
             },
           },
         }}
-        // projectId={9788}
-        projectId={79420}
+        // projectId={88604}
+        projectId={1}
         appearance={{
           theme: "dark",
 
